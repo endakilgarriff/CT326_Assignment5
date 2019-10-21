@@ -6,7 +6,10 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		Hashtable<String, Object> inventory = new Hashtable<String, Object>();
+//		Hashtable<String, Object> inventory = new Hashtable<String, Object>();
+//		List<Inventory> inventory = new List<Inventory>();
+		List<Inventory> inventory = new ArrayList<Inventory>();
+		
 		
 		Inventory inventory1 	= new Inventory("1000", "Apple\t", 30, 2.50);
 		Inventory inventory2 	= new Inventory("1001", "Orange\t", 40, 2);
@@ -19,25 +22,50 @@ public class Test {
 		Inventory inventory9 	= new Inventory("5001", "Beef\t", 10, 5.00);
 		Inventory inventory10	= new Inventory("5002", "Chicken\t", 10, 4.00);
 
-		inventory.put(inventory1.getSKU(), 	inventory1);
-		inventory.put(inventory2.getSKU(), 	inventory2);
-		inventory.put(inventory3.getSKU(), 	inventory3);
-		inventory.put(inventory4.getSKU(), 	inventory4);
-		inventory.put(inventory5.getSKU(), 	inventory5);
-		inventory.put(inventory6.getSKU(), 	inventory6);
-		inventory.put(inventory7.getSKU(), 	inventory7);
-		inventory.put(inventory8.getSKU(), 	inventory8);
-		inventory.put(inventory9.getSKU(), 	inventory9);
-		inventory.put(inventory10.getSKU(), inventory10);
-
-		Enumeration<String> items;
-		Object key;
+//		inventory.put(inventory1.getSKU(), 	inventory1);
+//		inventory.put(inventory2.getSKU(), 	inventory2);
+//		inventory.put(inventory3.getSKU(), 	inventory3);
+//		inventory.put(inventory4.getSKU(), 	inventory4);
+//		inventory.put(inventory5.getSKU(), 	inventory5);
+//		inventory.put(inventory6.getSKU(), 	inventory6);
+//		inventory.put(inventory7.getSKU(), 	inventory7);
+//		inventory.put(inventory8.getSKU(), 	inventory8);
+//		inventory.put(inventory9.getSKU(), 	inventory9);
+//		inventory.put(inventory10.getSKU(), inventory10);
+//
+//		Enumeration<String> items;
+//		Object key;
+//		
+//		items = inventory.keys();
+//		   while(items.hasMoreElements()) {
+//			      key = items.nextElement();
+//			      System.out.println(inventory.get(key));
+//			   }
+//		inventory.add(inventory.size(),inventory1);
+//		inventory.add(inventory.size(),inventory2);
+//		inventory.add(inventory.size(),inventory3);
+//		inventory.add(inventory.size(),inventory4);
+//		inventory.add(inventory.size(),inventory5);
+//		inventory.add(inventory.size(),inventory6);
+//		inventory.add(inventory.size(),inventory7);
+//		inventory.add(inventory.size(),inventory8);
+//		inventory.add(inventory.size(),inventory9);
+//		inventory.add(inventory.size(),inventory10);
 		
-		items = inventory.keys();
-		   while(items.hasMoreElements()) {
-			      key = items.nextElement();
-			      System.out.println(inventory.get(key));
-			   }
+		inventory.add(inventory1);
+		inventory.add(inventory2);
+		inventory.add(inventory3);
+		inventory.add(inventory4);
+		inventory.add(inventory5);
+		inventory.add(inventory6);
+		inventory.add(inventory7);
+		inventory.add(inventory8);
+		inventory.add(inventory9);
+		inventory.add(inventory10);
+		
+		for(Inventory i: inventory) {
+			System.out.println(i.toString());
+		}
 
 	}
 

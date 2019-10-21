@@ -6,20 +6,8 @@ public class Test {
 
 	public static void main(String[] args) {
 
-//		List<Inventory> inventory;
 		Hashtable<String, Object> inventory = new Hashtable<String, Object>();
-//		Inventory inventory;
-//		inventory = new Inventory("1000", "Apple", 30, 2.50);
-//		inventory = new Inventory("1001", "Orange", 40, 2);
-//		inventory = new Inventory("2001", "Milk", 10, 2.39);
-//		inventory = new Inventory("2002", "Orange Juice", 20, 1.99);
-//		inventory = new Inventory("3001", "Blue Cheese", 10, 2.25);
-//		inventory = new Inventory("3002", "Cheddar", 20, 2.79);
-//		inventory = new Inventory("4001", "Chocolate", 40, 2.99);
-//		inventory = new Inventory("4002", "Candy", 30, 0.99);
-//		inventory = new Inventory("5001", "Beef", 10, 5.00);
-//		inventory = new Inventory("5002", "Chicken", 10, 4.00);
-
+		
 		Inventory inventory1 	= new Inventory("1000", "Apple\t", 30, 2.50);
 		Inventory inventory2 	= new Inventory("1001", "Orange\t", 40, 2);
 		Inventory inventory3 	= new Inventory("2001", "Milk\t", 10, 2.39);
@@ -50,19 +38,6 @@ public class Test {
 			      key = items.nextElement();
 			      System.out.println(inventory.get(key));
 			   }
-		   
-//		 new Inventory("1000", "Apple", 30, 2.50);
-//		 new Inventory("1001", "Orange", 40, 2);
-//		 new Inventory("2001", "Milk", 10, 2.39);
-//		 new Inventory("2002", "Orange Juice", 20, 1.99);
-//		 new Inventory("3001", "Blue Cheese", 10, 2.25);
-//		 new Inventory("3002", "Cheddar", 20, 2.79);
-//		 new Inventory("4001", "Chocolate", 40, 2.99);
-//		 new Inventory("4002", "Candy", 30, 0.99);
-//		 new Inventory("5001", "Beef", 10, 5.00);
-//		 new Inventory("5002", "Chicken", 10, 4.00);
-
-//		System.out.println(inventory.toString());
 
 	}
 

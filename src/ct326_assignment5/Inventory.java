@@ -1,13 +1,14 @@
 package ct326_assignment5;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Inventory {
 
 	private String sku, itemName;
 	private int quantity;
 	private double price;
-//	ArrayList<Inventory> inventory;
+	HashMap<String,Inventory> setInventory;
 	
 	public Inventory(String sku, String itemName, int quantity, double price) {
 		this.sku = sku;
@@ -24,8 +25,8 @@ public class Inventory {
 		return itemName;
 	}
 	
-//	public Inventory setInventory(ArrayList<Inventory> inventory) {
-//		this.inventory = inventory;
+//	public void availableInventory(HashMap<String,Inventory> inventory) {
+//		setInventory = inventory;
 //	}
 //	
 //	public ArrayList<Inventory> getInventory() {

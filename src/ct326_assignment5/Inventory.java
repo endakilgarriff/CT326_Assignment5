@@ -24,18 +24,11 @@ public class Inventory {
 	public String getItemName() {
 		return itemName;
 	}
-	
-//	public void availableInventory(HashMap<String,Inventory> inventory) {
-//		setInventory = inventory;
-//	}
-//	
-//	public ArrayList<Inventory> getInventory() {
-//		return inventory;
-//	}
 
 	@Override
 	public String toString() {
-		return sku + "\t" + itemName + "\t" + quantity + "\t" + price ;
+		return sku + "\t" + itemName + %-20s + quantity + "\t" + price ;
+//		return String.format("%s \t %s \t%-20s% %s", sku, itemName, quantity, price);
 
 	}
 

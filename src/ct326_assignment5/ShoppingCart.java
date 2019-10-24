@@ -40,7 +40,8 @@ public class ShoppingCart {
 //				cart.put(item, quantity);
 				cart.add(new Inventory(item.getSKU(), item.getItemName(), quantity, item.getPrice()));
 				item.reduceQuantity(quantity);
-				System.out.println(quantity + " unit(s) of " + itemName + " added to cart");
+				System.out.println(quantity + " unit(s)"
+						+ " of " + itemName + " added to cart");
 			} 
 			else if(quantityAvailable == 0) System.out.println(item.getItemName() + " is not available at the moment.");
 		

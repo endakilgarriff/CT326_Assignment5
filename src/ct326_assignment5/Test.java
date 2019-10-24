@@ -34,17 +34,22 @@ public class Test {
 		System.out.println("Print Inventory:");
 		inventory.iterator().forEachRemaining(System.out::println);
 		
+//		for(Inventory i : inventory) {
+//			System.out.println(i.toString());
+//		}
+		
 		ShoppingCart cart1 = new ShoppingCart("Mark F", "23/10/2019");
 		cart1.availableInventory(inventory);
-		cart1.searchInventory("Apple");
+//		cart1.searchInventory("Apple");
 		cart1.addItem("Apple", 2);
+		inventory.iterator().forEachRemaining(System.out::println);
 		cart1.addItem("Orange", 5);
 		cart1.addItem("Milk", 2);
 		cart1.addItem("Blue Cheese", 4);
 		cart1.addItem("Candy", 25);
 		cart1.removeItem("Candy", 5);
-		
-		cart1.toString();
+		inventory.iterator().forEachRemaining(System.out::println);
+//		cart1.toString();
 		
 	}
 }

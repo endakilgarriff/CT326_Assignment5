@@ -16,7 +16,15 @@ public class Inventory {
 		this.quantity = quantity;
 		this.price = price;
 	}
-
+	
+	public void reduceQuantity(int quantity) {
+		this.quantity -= quantity;
+	}
+	
+	public void addQuantity(int quantity) {
+		this.quantity += quantity;
+	}
+	
 	public String getSKU() {
 		return sku;
 	}
@@ -24,11 +32,16 @@ public class Inventory {
 	public String getItemName() {
 		return itemName;
 	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
 
 	@Override
 	public String toString() {
-		return sku + "\t" + itemName + %-20s + quantity + "\t" + price ;
-//		return String.format("%s \t %s \t%-20s% %s", sku, itemName, quantity, price);
+//		String output = String.format("%s \t %s \t%-20s% %s", sku, itemName, quantity, price);
+		return sku + "\t" + itemName + "\t" + quantity + "\t" + price ;
+//		return output;
 
 	}
 

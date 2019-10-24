@@ -41,15 +41,35 @@ public class Test {
 		ShoppingCart cart1 = new ShoppingCart("Mark F", "23/10/2019");
 		cart1.availableInventory(inventory);
 //		cart1.searchInventory("Apple");
-		cart1.addItem("Apple", 2);
+		System.out.println("Printing Inventory before: " + cart1.getCustomer() + " shops");
 		inventory.iterator().forEachRemaining(System.out::println);
+		cart1.addItem("Apple", 2);
 		cart1.addItem("Orange", 5);
 		cart1.addItem("Milk", 2);
 		cart1.addItem("Blue Cheese", 4);
 		cart1.addItem("Candy", 25);
 		cart1.removeItem("Candy", 5);
+		System.out.println("Printing Inventory after: " + cart1.getCustomer() + " shops");
 		inventory.iterator().forEachRemaining(System.out::println);
 //		cart1.toString();
+		inventory = cart1.updateInventory();
 		
+		ShoppingCart cart2 = new ShoppingCart("Aiden G", "24/10/2019");
+		cart2.availableInventory(inventory);
+		System.out.println("Printing Inventory before: " + cart2.getCustomer() + " shops");
+		cart2.addItem("Apple", 2); 
+		cart2.addItem("Orange", 5); 
+		cart2.addItem("Milk", 2) ;
+		cart2.addItem("Blue Cheese", 4); 
+		cart2.addItem("Cheddar", 3);
+		cart2.addItem("Beef", 6);
+		cart2.addItem("Candy", 20); 
+		cart2.addItem("Chocolate", 10); 
+		cart2.addItem("Chicken", 2);
+		cart2.removeItem("Chocolate", 5); 
+		cart2.removeItem("Blue Cheese", 1);
+		
+		System.out.println("Printing Inventory after: " + cart2.getCustomer() + " shops");
+		inventory.iterator().forEachRemaining(System.out::println);
 	}
 }

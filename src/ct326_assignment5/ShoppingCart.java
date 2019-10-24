@@ -16,6 +16,9 @@ public class ShoppingCart {
 		this.date = date;
 	}
 	
+	public String getCustomer() {
+		return customerName;
+	}
 	
 	public void addItem(String itemName, int quantity) {
 		
@@ -26,7 +29,7 @@ public class ShoppingCart {
 //				cart.put(item, quantityAvailable);
 				System.out.println();
 				cart.add(new Inventory(item.getSKU(), item.getItemName(), quantityAvailable, item.getPrice()));
-				System.out.println("Only " + quantityAvailable + "units of " + item.getItemName() + "are available.\n These have been added to your cart.");
+				System.out.println("Only " + quantityAvailable + " units of " + item.getItemName() + "are available.\n These have been added to your cart.");
 			} 
 			else if(quantityAvailable >= quantity) {
 //				cart.put(item, quantity);
@@ -44,6 +47,18 @@ public class ShoppingCart {
 		int indexRemove = searchInventory(itemName, cart);
 		System.out.println("Cart: " + cart);
 		System.out.println("Remove item: " + cart.get(indexRemove) + indexRemove);
+		if(cart.get(indexRemove).getQuantity() <= quantity ) {
+			// Removes all units from cart and removes item from list
+			cart.remove(cart.get(searchInventory(itemName, cart)));
+			setInventory.get(indexRemove).addQuantity(quantity);
+		}
+		else if(cart.get(indexRemove).getQuantity() > quantity) {
+			// Only removes the quantity of items customer no longer wants.
+			// Updates inventory with items put back
+			cart.get(indexRemove).reduceQuantity(quantity);
+			setInventory.get(indexRemove).addQuantity(quantity);
+		}
+		
 		cart.remove(cart.get(searchInventory(itemName, cart)));
 		setInventory.get(indexRemove).addQuantity(quantity);
 	}

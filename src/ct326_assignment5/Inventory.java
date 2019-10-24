@@ -36,6 +36,10 @@ public class Inventory {
 	public int getQuantity() {
 		return quantity;
 	}
+	
+	public double getPrice() {
+		return price;
+	}
 
 	@Override
 	public String toString() {

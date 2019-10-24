@@ -1,14 +1,15 @@
-package ct326_assignment5;
+/*
+ * Name: Enda Kilgarriff 
+ * Student ID: 17351606
+ */
 
-import java.util.ArrayList;
-import java.util.HashMap;
+package ct326_assignment5;
 
 public class Inventory {
 
 	private String sku, itemName;
 	private int quantity;
 	private double price;
-	HashMap<String,Inventory> setInventory;
 	
 	public Inventory(String sku, String itemName, int quantity, double price) {
 		this.sku = sku;
@@ -44,7 +45,7 @@ public class Inventory {
 	@Override
 	public String toString() {
 //		String output = String.format("%s \t %s \t%-20s% %s", sku, itemName, quantity, price);
-		return sku + "\t" + itemName + "\t" + quantity + "\t" + price ;
+		return sku + "\t" + itemName + "    \t" + quantity + " \t" + price ;
 //		return output;
 
 	}

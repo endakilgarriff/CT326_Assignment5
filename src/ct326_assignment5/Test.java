@@ -1,3 +1,8 @@
+/*
+ * Name: Enda Kilgarriff 
+ * Student ID: 17351606
+ */
+
 package ct326_assignment5;
 
 import java.util.*;
@@ -31,7 +36,7 @@ public class Test {
 		inventory.add(inventory9);
 		inventory.add(inventory10);
 	    
-		System.out.println("Print Inventory:");
+		System.out.println("Enda Kilgarriff - 17351606 \nPrint Inventory:");
 		inventory.iterator().forEachRemaining(System.out::println);
 		
 //		for(Inventory i : inventory) {
@@ -41,22 +46,27 @@ public class Test {
 		ShoppingCart cart1 = new ShoppingCart("Mark F", "23/10/2019");
 		cart1.availableInventory(inventory);
 //		cart1.searchInventory("Apple");
-		System.out.println("Printing Inventory before: " + cart1.getCustomer() + " shops");
+		System.out.println("\nPrinting Inventory before: " + cart1.getCustomer() + " shops");
 		inventory.iterator().forEachRemaining(System.out::println);
+		System.out.println("\n -------- CART 1 --------\n");
 		cart1.addItem("Apple", 2);
 		cart1.addItem("Orange", 5);
 		cart1.addItem("Milk", 2);
 		cart1.addItem("Blue Cheese", 4);
 		cart1.addItem("Candy", 25);
 		cart1.removeItem("Candy", 5);
-		System.out.println("Printing Inventory after: " + cart1.getCustomer() + " shops");
+		System.out.println("\nPrinting Inventory after: " + cart1.getCustomer() + " shops");
 		inventory.iterator().forEachRemaining(System.out::println);
-//		cart1.toString();
 		inventory = cart1.updateInventory();
+		
+		System.out.println("\nViewing cart");
+		System.out.println(cart1.viewCart());
 		
 		ShoppingCart cart2 = new ShoppingCart("Aiden G", "24/10/2019");
 		cart2.availableInventory(inventory);
-		System.out.println("Printing Inventory before: " + cart2.getCustomer() + " shops");
+		System.out.println("\nPrinting Inventory before: " + cart2.getCustomer() + " shops");
+		inventory.iterator().forEachRemaining(System.out::println);
+		System.out.println("\n -------- CART 2 --------\n");
 		cart2.addItem("Apple", 2); 
 		cart2.addItem("Orange", 5); 
 		cart2.addItem("Milk", 2) ;
@@ -69,7 +79,10 @@ public class Test {
 		cart2.removeItem("Chocolate", 5); 
 		cart2.removeItem("Blue Cheese", 1);
 		
-		System.out.println("Printing Inventory after: " + cart2.getCustomer() + " shops");
+		System.out.println("\nViewing cart");
+		System.out.println(cart2.viewCart());
+		
+		System.out.println("\nPrinting Inventory after: " + cart2.getCustomer() + " shops");
 		inventory.iterator().forEachRemaining(System.out::println);
 	}
 }

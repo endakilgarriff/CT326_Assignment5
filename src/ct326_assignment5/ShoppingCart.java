@@ -43,7 +43,7 @@ public class ShoppingCart {
 			cart.add(new Inventory(item.getSKU(), item.getItemName(), quantityAvailable, item.getPrice()));
 			item.reduceQuantity(quantityAvailable);
 			System.out.println("Only " + quantityAvailable + " units of " + item.getItemName()
-					+ " are available.\t These have been added to your cart.");
+					+ " are available.\n\t These have been added to your cart.");
 		}
 		// if there is enough for the customer they are added to the cart
 		else if (quantityAvailable >= quantity) {
@@ -104,10 +104,8 @@ public class ShoppingCart {
 			output += i.getQuantity() + "\t" + i.getItemName() + "    \t €" + i.getPrice() + "\n";
 			total += i.getPrice() * i.getQuantity();
 		}
-//		System.out.println("Total: " + total);
 		total = Math.round(total * 100);
-		output += "\t\t\t €" + total / 100;
-//		output += "\t\t\t €" + total ;
+		output += "\tTotal\t\t €" + total / 100;
 		return output;
 	}
 

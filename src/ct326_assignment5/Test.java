@@ -13,7 +13,7 @@ public class Test {
 	public static void main(String[] args) {
 
 		// Creating Arraylist to store inventory (Implementation developed before
-		// changes to brief)
+		// changes to brief and specified using List<Item>)
 		ArrayList<Inventory> inventory = new ArrayList<Inventory>();
 
 		// Creating the items that will be available in inventory.
@@ -97,6 +97,7 @@ public class Test {
 		// Print out contents of cart after customer add/removes what they want. 
 		// Gives their details, date of transaction and the cost of the shop
 		System.out.println("\n - - - Viewing cart 2 - - - ");
+		cart2.sortByPrice();
 		System.out.println(cart2.viewCart());
 		
 		// Prints out all the final inventory after the customer have done their shopping.

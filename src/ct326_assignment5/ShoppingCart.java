@@ -118,5 +118,5 @@ class ShoppingCart {
 	// Compares the item names returns if they are a match
 	private Comparator<Inventory> c = (item1, item2) -> item1.getItemName().compareTo(item2.getItemName());
 	// Compares the price of items
-	private Comparator<Inventory> c1 = (item1, item2) -> Double.compare(item1.getPrice(), item2.getPrice());
+	private Comparator<Inventory> c1 = comparingDouble(Inventory::getPrice);
 }

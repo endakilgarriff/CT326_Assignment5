@@ -5,16 +5,16 @@
 
 package ct326_assignment5;
 
-// Importing Arraylist 
-import java.util.ArrayList;
+// Importing list 
+import java.util.*;
 
 public class Test {
 
 	public static void main(String[] args) {
 
-		// Creating Arraylist to store inventory (Implementation developed before
+		// Creating list to store inventory (Implementation developed before
 		// changes to brief and specified using List<Item>)
-		ArrayList<Inventory> inventory = new ArrayList<Inventory>();
+		List<Inventory> inventory = new ArrayList<Inventory>();
 
 		// Creating the items that will be available in inventory.
 		Inventory inventory1 = new Inventory("1000", "Apple", 30, 2.50);

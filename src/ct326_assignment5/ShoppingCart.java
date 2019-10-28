@@ -8,27 +8,29 @@ package ct326_assignment5;
 // Importing all libraries for Arraylist, collector and comparator 
 import java.util.*;
 
-public class ShoppingCart {
+import static java.util.Comparator.*;
+
+class ShoppingCart {
 
 	// Attributes and ArrayLists for storing items added to cart
 	// and for storing the inventory available to the customer
 	private String customerName, date;
-	private ArrayList<Inventory> cart = new ArrayList<Inventory>();
+	private ArrayList<Inventory> cart = new ArrayList<>();
 	private ArrayList<Inventory> setInventory;
 
 	// Constructor
-	public ShoppingCart(String customerName, String date) {
+	ShoppingCart(String customerName, String date) {
 		this.customerName = customerName;
 		this.date = date;
 	}
 
 	// Returns the customers name as String
-	public String getCustomer() {
+	String getCustomer() {
 		return customerName;
 	}
 
 	// Method to addItem to the cart
-	public void addItem(String itemName, int quantity) {
+	void addItem(String itemName, int quantity) {
 
 		// Searches inventory available to customer for the item the customer wants.
 		// Creates temp item to store wanted item details
@@ -61,7 +63,7 @@ public class ShoppingCart {
 	}  // End addItem()
 
 	
-	public void removeItem(String itemName, int quantity) {
+	void removeItem(String itemName, int quantity) {
 		 
 		int indexRemove = searchInventory(itemName, cart);
 		
@@ -82,21 +84,20 @@ public class ShoppingCart {
 
 	// Gets the inventory made available in the Test class so action
 	// can be taken on them by the customer
-	public void availableInventory(ArrayList<Inventory> inventory) {
+	void availableInventory(ArrayList<Inventory> inventory) {
 		setInventory = inventory;
 	}
 	
 	// Searches the inventory passed for the item matching the itemName passed
-	public int searchInventory(String itemName, ArrayList<Inventory> list) {
-		Collections.sort(list, c); // Sorts array that we want to search
+	private int searchInventory(String itemName, ArrayList<Inventory> list) {
+		list.sort(c); // Sorts array that we want to search (sorts alphabetically by itemName)
 		Inventory tempItem = new Inventory(null, itemName, 0, 0); // Temp Inventory object
 		// BinarySeach from collections returns index location of matching item from List
-		int index = Collections.binarySearch(setInventory, tempItem, c);
-		return index;
+		return Collections.binarySearch(setInventory, tempItem, c);
 	}
 
 	// Presents items added to users cart with the total cost
-	public String viewCart() {
+	String viewCart() {
 		String output = "";
 		double total = 0.0;
 		output += date + "\tName: " + customerName + " \n";
@@ -109,12 +110,13 @@ public class ShoppingCart {
 		return output;
 	}
 
+	// When called this sorts the list in order of the price of the item
+	void sortByPrice() {
+		cart.sort(c1);
+	}
+
 	// Compares the item names returns if they are a match
-	Comparator<Inventory> c = new Comparator<Inventory>() {
-		@Override
-		public int compare(Inventory item1, Inventory item2) {
-			return item1.getItemName().compareTo(item2.getItemName());
-		}
-	};
-	
+	private Comparator<Inventory> c = (item1, item2) -> item1.getItemName().compareTo(item2.getItemName());
+	// Compares the price of items
+	private Comparator<Inventory> c1 = (item1, item2) -> Double.compare(item1.getPrice(), item2.getPrice());
 }

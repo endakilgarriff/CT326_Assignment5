@@ -13,7 +13,7 @@ public class Test {
 	public static void main(String[] args) {
 
 		// Creating list to store inventory (Implementation developed before
-		// changes to brief and specified using List<Item>)
+		// changes to brief)
 		List<Inventory> inventory = new ArrayList<Inventory>();
 
 		// Creating the items that will be available in inventory.
@@ -106,6 +106,7 @@ public class Test {
 		
 		
 		// Shows that if there is no stock the user gets a message
+		System.out.println("\nTest when there is no Candy in stock:");
 		cart2.addItem("Candy", 1);
 	}
 }

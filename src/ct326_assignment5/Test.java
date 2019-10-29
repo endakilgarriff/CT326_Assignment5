@@ -20,7 +20,7 @@ public class Test {
 		Inventory inventory1 = new Inventory("1000", "Apple", 30, 2.50);
 		Inventory inventory2 = new Inventory("1001", "Orange", 40, 2);
 		Inventory inventory3 = new Inventory("2001", "Milk", 10, 2.39);
-		Inventory inventory4 = new Inventory("2002", "Orange Juice", 20, 1.99);
+		Inventory inventory4 = new Inventory("2002", "OrangeJuice", 20, 1.99);
 		Inventory inventory5 = new Inventory("3001", "Blue Cheese", 10, 2.25);
 		Inventory inventory6 = new Inventory("3002", "Cheddar", 20, 2.79);
 		Inventory inventory7 = new Inventory("4001", "Chocolate", 40, 2.99);
@@ -41,7 +41,7 @@ public class Test {
 		inventory.add(inventory10);
 
 		// Printing out inventory.
-		System.out.println("Enda Kilgarriff - 17351606 \nPrint Inventory:");
+		System.out.println("Assignment 5 - Enda Kilgarriff - 17351606 \nPrint Inventory:");
 		inventory.iterator().forEachRemaining(System.out::println);
 
 		// Creating shopping cart for customer, passing the inventory available that was
@@ -97,6 +97,8 @@ public class Test {
 		// Print out contents of cart after customer add/removes what they want. 
 		// Gives their details, date of transaction and the cost of the shop
 		System.out.println("\n - - - Viewing cart 2 - - - ");
+		System.out.println(cart2.viewCart());
+		System.out.println("---Printing sorted cart2---");
 		cart2.sortByPrice();
 		System.out.println(cart2.viewCart());
 		

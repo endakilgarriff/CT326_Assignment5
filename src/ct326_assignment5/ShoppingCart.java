@@ -68,18 +68,18 @@ class ShoppingCart {
 	void removeItem(String itemName, int quantity) {
 		 
 		int indexRemove = searchInventory(itemName, cart);
-		
-		System.out.println("Remove " + quantity + " unit(s) of " + itemName);
+		int indexToAdd = searchInventory(itemName, setInventory);
+
+		System.out.println("Remove " + quantity + " unit(s) of " + cart.get(indexRemove).getItemName());
 		// Removes all units from cart and removes item from list
 		if (cart.get(indexRemove).getQuantity() <= quantity) {
-			setInventory.get(indexRemove).addQuantity(quantity);
+			setInventory.get(indexToAdd).addQuantity(quantity);
 			cart.remove(cart.get(searchInventory(itemName, cart)));
 		} 
 		// Only removes the quantity of items customer no longer wants.
 		// Updates inventory with items put back
 		else if (cart.get(indexRemove).getQuantity() > quantity) {
-			
-			setInventory.get(indexRemove).addQuantity(quantity);
+			setInventory.get(indexToAdd).addQuantity(quantity);
 			cart.get(indexRemove).reduceQuantity(quantity);
 		}
 	}
@@ -95,7 +95,7 @@ class ShoppingCart {
 		list.sort(c); // Sorts array that we want to search (sorts alphabetically by itemName)
 		Inventory tempItem = new Inventory(null, itemName, 0, 0); // Temp Inventory object
 		// BinarySeach from collections returns index location of matching item from List
-		return Collections.binarySearch(setInventory, tempItem, c);
+		return Collections.binarySearch(list, tempItem, c);
 	}
 
 	// Presents items added to users cart with the total cost

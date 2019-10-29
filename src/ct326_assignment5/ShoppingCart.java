@@ -5,18 +5,20 @@
 
 package ct326_assignment5;
 
-// Importing all libraries for Arraylist, collector and comparator 
+// Importing all libraries for List, collector and comparator 
+import java.text.DecimalFormat;
 import java.util.*;
 
 import static java.util.Comparator.*;
 
 class ShoppingCart {
 
-	// Attributes and ArrayLists for storing items added to cart
+	// Attributes and Lists for storing items added to cart
 	// and for storing the inventory available to the customer
 	private String customerName, date;
-	private ArrayList<Inventory> cart = new ArrayList<>();
-	private ArrayList<Inventory> setInventory;
+	private List<Inventory> cart = new ArrayList<>();
+	private List<Inventory> setInventory;
+	DecimalFormat df = new DecimalFormat("0.00");
 
 	// Constructor
 	ShoppingCart(String customerName, String date) {
@@ -55,7 +57,7 @@ class ShoppingCart {
 		}
 		// If there is no stock of item message is returned to customer
 		else if (quantityAvailable == 0)
-			System.out.println(item.getItemName() + " is not available at the moment.");
+			System.out.println(item.getItemName() + " is not available at the moment. Sorry for any inconvenience");
 		// The below message is returned if we have none of the desired item
 		else { 
 			System.out.println("Item unavailable, sorry");
@@ -84,12 +86,12 @@ class ShoppingCart {
 
 	// Gets the inventory made available in the Test class so action
 	// can be taken on them by the customer
-	void availableInventory(ArrayList<Inventory> inventory) {
+	void availableInventory(List<Inventory> inventory) {
 		setInventory = inventory;
 	}
 	
 	// Searches the inventory passed for the item matching the itemName passed
-	private int searchInventory(String itemName, ArrayList<Inventory> list) {
+	private int searchInventory(String itemName, List<Inventory> list) {
 		list.sort(c); // Sorts array that we want to search (sorts alphabetically by itemName)
 		Inventory tempItem = new Inventory(null, itemName, 0, 0); // Temp Inventory object
 		// BinarySeach from collections returns index location of matching item from List
@@ -102,11 +104,11 @@ class ShoppingCart {
 		double total = 0.0;
 		output += date + "\tName: " + customerName + " \n";
 		for (Inventory i : cart) {
-			output += i.getQuantity() + "\t" + i.getItemName() + "    \t €" + i.getPrice() + "\n";
-			total += i.getPrice() * i.getQuantity();
+			output += (i.getQuantity() + "\t" + i.getItemName() + "    \t €" + df.format(i.getPrice() * i.getQuantity()) + "\n");
+			total += i.getPrice()*i.getQuantity();
 		}
-		total = Math.round(total * 100);
-		output += "\tTotal\t\t €" + total / 100;
+
+		output += "\tTotal \t\t €" + df.format(total);
 		return output;
 	}
 

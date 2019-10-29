@@ -6,6 +6,7 @@
 package ct326_assignment5;
 
 // Importing all libraries for List, collector and comparator 
+import java.text.DecimalFormat;
 import java.util.*;
 
 import static java.util.Comparator.*;
@@ -17,6 +18,7 @@ class ShoppingCart {
 	private String customerName, date;
 	private List<Inventory> cart = new ArrayList<>();
 	private List<Inventory> setInventory;
+	DecimalFormat df = new DecimalFormat("0.00");
 
 	// Constructor
 	ShoppingCart(String customerName, String date) {
@@ -55,7 +57,7 @@ class ShoppingCart {
 		}
 		// If there is no stock of item message is returned to customer
 		else if (quantityAvailable == 0)
-			System.out.println(item.getItemName() + " is not available at the moment.");
+			System.out.println(item.getItemName() + " is not available at the moment. Sorry for any inconvenience");
 		// The below message is returned if we have none of the desired item
 		else { 
 			System.out.println("Item unavailable, sorry");
@@ -102,11 +104,11 @@ class ShoppingCart {
 		double total = 0.0;
 		output += date + "\tName: " + customerName + " \n";
 		for (Inventory i : cart) {
-			output += i.getQuantity() + "\t" + i.getItemName() + "    \t €" + i.getPrice() + "\n";
-			total += i.getPrice() * i.getQuantity();
+			output += (i.getQuantity() + "\t" + i.getItemName() + "    \t €" + df.format(i.getPrice() * i.getQuantity()) + "\n");
+			total += i.getPrice()*i.getQuantity();
 		}
-		total = Math.round(total * 100);
-		output += "\tTotal\t\t €" + total / 100;
+
+		output += "\tTotal \t\t €" + df.format(total);
 		return output;
 	}
 

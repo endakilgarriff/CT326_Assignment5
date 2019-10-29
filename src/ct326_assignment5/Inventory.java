@@ -57,8 +57,8 @@ public class Inventory {
 	// toString override to return details
 	// of an item in the inventory in a given format.
 	public String toString() {
-		return sku + "\t" + itemName + "    \t" + quantity + 
-				" \t" + price;
+		return sku + "\t" + itemName + "    \t" + quantity +
+				"\t" + price;
 	}
 
 }

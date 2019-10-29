@@ -28,7 +28,7 @@ public class Test {
 		Inventory inventory9 = new Inventory("5001", "Beef", 10, 5.00);
 		Inventory inventory10 = new Inventory("5002", "Chicken", 10, 4.00);
 
-		// Adding inventory items to the Inventory Arraylist
+		// Adding inventory items to the Inventory List
 		inventory.add(inventory1);
 		inventory.add(inventory2);
 		inventory.add(inventory3);
@@ -103,5 +103,9 @@ public class Test {
 		// Prints out all the final inventory after the customer have done their shopping.
 		System.out.println("\nPrinting Inventory after " + cart2.getCustomer() + " shops");
 		inventory.iterator().forEachRemaining(System.out::println);
+		
+		
+		// Shows that if there is no stock the user gets a message
+		cart2.addItem("Candy", 1);
 	}
 }
